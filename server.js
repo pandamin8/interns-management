@@ -1,10 +1,13 @@
 const express = require('express')
 const createManager = require('./utils/createManager')
+const cors = require('cors');
 
 require('./src/db/mongoose')
 
 const app = express()
 const port = process.env.PORT || 3000
+
+app.use(cors())
 
 app.use(express.json())
 app.use(require('./src/routers/student'))
