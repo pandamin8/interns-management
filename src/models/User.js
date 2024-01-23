@@ -18,8 +18,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        trim: true,
-        minlength: 6
+        trim: true
     }, 
     tokens: [{
         token: {
@@ -76,12 +75,5 @@ userSchema.pre('save', async function (next) {
     next()
 })
 
-// userSchema.pre('remove', async function (next) {
-//     const user = this
-//     await Task.deleteMany({ owner: user._id })
-//     next()
-// })
-
-// const User = mongoose.model('User', userSchema)
 
 module.exports = userSchema
