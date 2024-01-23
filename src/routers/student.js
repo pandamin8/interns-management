@@ -3,6 +3,16 @@ const Student = require('../models/Student')
 const auth = require('../middlewares/auth')
 const router = new express.Router()
 
+router.get('/students', auth(3), async (req, res) => {
+    try {
+        const students = await Student.find()
+        res.send(students)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+
+
 router.post('/student/register', auth(3), async (req, res) => {
     const student = new Student(req.body)
 

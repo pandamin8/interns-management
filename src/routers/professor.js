@@ -4,6 +4,15 @@ const Professor = require('../models/Professor')
 
 const router = new express.Router()
 
+router.get('/professors', auth(3), async (req, res) => {
+    try {
+        const professors = await Professor.find()
+        res.send(professors)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+
 
 router.post('/professor/register', auth(3), async (req, res) => {
     const professor = new Professor(req.body)
