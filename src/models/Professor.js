@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const userSchema = require('./User')
+const bcrypt = require('bcrypt')
 
 userSchema.statics.findByCredentials = async (username, password) => {
     const user = await Professor.findOne({ username })    
