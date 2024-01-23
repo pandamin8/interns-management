@@ -14,6 +14,7 @@ app.use(require('./src/routers/student'))
 app.use(require('./src/routers/user'))
 app.use(require('./src/routers/manager'))
 app.use(require('./src/routers/professor'))
+app.use(require('./src/routers/request'))
 
 createManager()
 

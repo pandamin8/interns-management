@@ -14,7 +14,12 @@ const requestSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'                
+        ref: 'Student'                
+    },
+    checked: {
+        type: Boolean,
+        optional: true,
+        default: false        
     }
 }, {
     timestamps: true
