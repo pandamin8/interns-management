@@ -7,7 +7,7 @@ const createManager = async () => {
 
     const manager = new Manager({
         username: 'admin',
-        password:'admin1234',
+        password:'admin',
         name: 'manager'
     })
 

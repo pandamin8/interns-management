@@ -7,7 +7,7 @@ const auth = (type) => {
     return async (req, res, next) => {
         try {
             const token = req.header('Authorization').replace('Bearer ', '')
-            const decoded = jwt.verify(token, 'alikaftar')
+            const decoded = jwt.verify(token, 'secret')
 
             let user
 
